@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1642544642803" clover="3.2.0">
+  <project timestamp="1642544642803" name="All files">
+    <metrics statements="145" coveredstatements="122" conditionals="63" coveredconditionals="37" methods="48" coveredmethods="39" elements="256" coveredelements="198" complexity="0" loc="145" ncloc="145" packages="10" files="33" classes="33"/>
+    <package name="src">
+      <metrics statements="24" coveredstatements="15" conditionals="19" coveredconditionals="7" methods="3" coveredmethods="1"/>
+      <file name="index.tsx" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/index.tsx">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+      <file name="initialState.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/initialState.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+      </file>
+      <file name="reducer.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/reducer.ts">
+        <metrics statements="16" coveredstatements="11" conditionals="19" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="4" type="cond" truecount="4" falsecount="3"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="2"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="20" count="1" type="cond" truecount="1" falsecount="2"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="37" count="1" type="cond" truecount="1" falsecount="2"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="48" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+      </file>
+      <file name="store.tsx" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/store.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.App">
+      <metrics statements="36" coveredstatements="29" conditionals="12" coveredconditionals="6" methods="12" coveredmethods="8"/>
+      <file name="AppBody.tsx" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/App/AppBody.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+      </file>
+      <file name="AppBottom.tsx" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/App/AppBottom.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+      </file>
+      <file name="AppHeader.tsx" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/App/AppHeader.tsx">
+        <metrics statements="8" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="1"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+      </file>
+      <file name="actionType.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/App/actionType.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="3" type="stmt"/>
+      </file>
+      <file name="actions.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/App/actions.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="2"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/App/index.tsx">
+        <metrics statements="12" coveredstatements="8" conditionals="6" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="Button.tsx" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/components/Button.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="15" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="4" type="stmt"/>
+      </file>
+      <file name="Select.tsx" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/components/Select.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.layout">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Panel.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/layout/Panel.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.model">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="IAction.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/model/IAction.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="ICellInfo.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/model/ICellInfo.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="IPayload.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/model/IPayload.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="IState.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/model/IState.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="IUserProfile.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/model/IUserProfile.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="index.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/model/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.modules.AuthForm">
+      <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <file name="index.tsx" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/modules/AuthForm/index.tsx">
+        <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="35" count="11" type="stmt"/>
+        <line num="37" count="11" type="stmt"/>
+        <line num="39" count="11" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="43" count="11" type="stmt"/>
+        <line num="44" count="7" type="stmt"/>
+        <line num="45" count="7" type="stmt"/>
+        <line num="48" count="11" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.modules.Cell">
+      <metrics statements="20" coveredstatements="20" conditionals="22" coveredconditionals="17" methods="12" coveredmethods="12"/>
+      <file name="actionType.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/modules/Cell/actionType.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+      </file>
+      <file name="actions.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/modules/Cell/actions.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+      </file>
+      <file name="constatnts.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/modules/Cell/constatnts.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="4" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/modules/Cell/index.tsx">
+        <metrics statements="17" coveredstatements="17" conditionals="22" coveredconditionals="17" methods="11" coveredmethods="11"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="16" count="45" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="45" type="cond" truecount="1" falsecount="1"/>
+        <line num="19" count="45" type="stmt"/>
+        <line num="20" count="45" type="stmt"/>
+        <line num="21" count="45" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="45" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="45" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="4" type="stmt"/>
+        <line num="41" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="63" count="4" type="stmt"/>
+        <line num="70" count="45" type="stmt"/>
+        <line num="72" count="45" type="stmt"/>
+        <line num="73" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="75" count="45" type="stmt"/>
+        <line num="77" count="45" type="stmt"/>
+      </file>
+      <file name="models.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/modules/Cell/models.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.modules.GameField">
+      <metrics statements="18" coveredstatements="17" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <file name="actionType.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/modules/GameField/actionType.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="actions.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/modules/GameField/actions.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/modules/GameField/index.tsx">
+        <metrics statements="16" coveredstatements="15" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="20" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="29" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="36" count="43" type="stmt"/>
+        <line num="37" count="43" type="stmt"/>
+        <line num="38" count="43" type="stmt"/>
+        <line num="39" count="43" type="stmt"/>
+        <line num="40" count="43" type="stmt"/>
+        <line num="41" count="43" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.modules.UserForm">
+      <metrics statements="12" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <file name="index.tsx" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/modules/UserForm/index.tsx">
+        <metrics statements="12" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
+      <file name="createArrayBySize.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/utils/createArrayBySize.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="9" type="cond" truecount="1" falsecount="0"/>
+        <line num="2" count="658" type="stmt"/>
+      </file>
+      <file name="createGameField.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/utils/createGameField.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="7" count="653" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="27" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="14" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="12" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/utils/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="shuffle.ts" path="/home/runner/work/otus-react-redux-hw-8/otus-react-redux-hw-8/src/utils/shuffle.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="15" type="stmt"/>
+        <line num="3" count="15" type="stmt"/>
+        <line num="4" count="653" type="stmt"/>
+        <line num="5" count="653" type="stmt"/>
+        <line num="6" count="653" type="stmt"/>
+        <line num="7" count="653" type="stmt"/>
+        <line num="9" count="15" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
