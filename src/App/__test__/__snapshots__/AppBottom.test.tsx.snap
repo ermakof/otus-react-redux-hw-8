@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBottom Render <AppBottom> without data 1`] = `
+<DocumentFragment>
+  <div
+    class="css-cogpxn"
+    role="bottomPanel"
+  >
+    <p
+      class="css-o9gtt2"
+      role="messageResult"
+    >
+      Результат:
+    </p>
+    <p
+      class="css-o9gtt2"
+      role="messagePercentFilled"
+    >
+      Процент заполнения: 10
+    </p>
+  </div>
+</DocumentFragment>
+`;

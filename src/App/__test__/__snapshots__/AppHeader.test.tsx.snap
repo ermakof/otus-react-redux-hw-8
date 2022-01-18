@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppHeader Render <AppHeader> 1`] = `
+<DocumentFragment>
+  <div
+    class="css-cogpxn"
+    role="topPanel"
+  >
+    <p
+      class="css-o9gtt2"
+    >
+      Lines
+    </p>
+    <button
+      class="css-tv5zn1"
+      role="button"
+    >
+      Reset
+    </button>
+    <select
+      class="css-tv5zn1"
+      name="select"
+      role="select"
+    >
+      <option
+        role="option"
+        value="1"
+      >
+        Падаван
+      </option>
+      <option
+        role="option"
+        value="2"
+      >
+        Джедай
+      </option>
+      <option
+        role="option"
+        value="3"
+      >
+        Мастер-джедай
+      </option>
+      <option
+        role="option"
+        value="4"
+      >
+        Член Совета Силы
+      </option>
+    </select>
+  </div>
+</DocumentFragment>
+`;
