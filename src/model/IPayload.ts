@@ -1,8 +1,11 @@
+import { IUserProfile } from '@src/model/IUserProfile';
+
 interface IPayload {
-  gameFieldSize?: number;
-  selected?: boolean;
+  selectedCell?: number;
   cellId?: number;
+  gameFieldSize?: number;
   gameLevel?: string;
+  userProfile?: IUserProfile;
 }
 
 export default IPayload;

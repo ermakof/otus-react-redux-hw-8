@@ -1,32 +1,32 @@
 import React, { FC, memo, useContext } from 'react';
 import Panel from '@src/layout/Panel';
 import styled from '@emotion/styled';
-import Button from '@src/components/Button';
+import UserForm from '@src/modules/UserForm';
 import store from '@src/store';
-import { resetApp, setLevel } from '@src/App/actions';
-import Select from '@src/components/Select';
+import AuthForm, { IAuthData } from '@src/modules/AuthForm';
+import { login, resetApp } from '@src/App/actions';
 
 const Title = styled.p`
-  margin: auto 20px;
+  font-size: 32px;
+  margin: auto 20px auto 0;
 `;
 
 const AppHeader: FC = () => {
-  const { dispatch } = useContext(store);
+  const {
+    dispatch,
+    state: { userProfile },
+  } = useContext(store);
 
-  const handleReset = () => {
+  const handleSubmit = (authData: IAuthData) => {
+    localStorage.setItem('lines:auth-data', JSON.stringify(authData));
+    dispatch(login(authData));
     dispatch(resetApp());
-  };
-
-  const handleSelectLevel = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const { value } = event.currentTarget;
-    dispatch(setLevel(value));
   };
 
   return (
     <Panel role="topPanel">
-      <Title>Lines</Title>
-      <Button onClick={handleReset} title="Reset" />
-      <Select onSelect={handleSelectLevel} />
+      <Title>{`Lines ${userProfile?.login || ''}`}</Title>
+      {userProfile ? <UserForm /> : <AuthForm onSubmit={handleSubmit} />}
     </Panel>
   );
 };

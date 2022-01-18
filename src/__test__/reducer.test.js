@@ -9,14 +9,14 @@ describe('reducer', () => {
       gameLevel: '3',
       gameFieldSize: 5,
       gameFieldPercentFilled: 30,
-      gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
-      selectedCells: { 1: true },
+      gameFieldData: [0, 1, 0, 0, 0, 0, 0, 0, 0],
+      selectedCell: 1,
     };
     const newState = reducer(state, resetApp());
     expect(newState.gameFieldPercentFilled).toBe(30);
     expect(newState.gameFieldSize).toBe(5);
     expect(newState.gameLevel).toBe('3');
-    expect(newState.selectedCells).toEqual({ 1: true });
+    expect(newState.selectedCell).toEqual(1);
     expect(newState.gameFieldData.length).toBe(25);
   });
 
@@ -26,13 +26,13 @@ describe('reducer', () => {
       gameFieldSize: 5,
       gameFieldPercentFilled: 30,
       gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
-      selectedCells: { 1: true },
+      selectedCell: 1,
     };
     const newState = reducer(state, setLevel('2'));
     expect(newState.gameFieldPercentFilled).toBe(20);
     expect(newState.gameFieldSize).toBe(5);
     expect(newState.gameLevel).toBe('2');
-    expect(newState.selectedCells).toEqual({ 1: true });
+    expect(newState.selectedCell).toEqual(1);
     expect(newState.gameFieldData.length).toBe(25);
   });
 
@@ -42,10 +42,10 @@ describe('reducer', () => {
       gameFieldSize: 5,
       gameFieldPercentFilled: 30,
       gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
-      selectedCells: { 1: true },
+      selectedCell: 1,
     };
-    const newState = reducer(state, setSelectedCell(2, true));
-    expect(newState.selectedCells).toEqual({ 1: true, 2: true });
+    const newState = reducer(state, setSelectedCell(2));
+    expect(newState.selectedCell).toEqual(2);
   });
 
   it('setGameFieldSize', () => {
@@ -54,7 +54,6 @@ describe('reducer', () => {
       gameFieldSize: 2,
       gameFieldPercentFilled: 30,
       gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
-      selectedCells: { 1: true },
     };
     const newState = reducer(state, setGameFieldSize(2));
     expect(newState.gameFieldSize).toEqual(2);

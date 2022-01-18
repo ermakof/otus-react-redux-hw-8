@@ -18,7 +18,6 @@ describe('AppBody', () => {
       gameFieldSize: 3,
       gameFieldPercentFilled: 10,
       gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
-      selectedCells: {},
     };
     const { asFragment } = render(
       <Store.Provider value={{ dispatch, state }}>
@@ -36,7 +35,6 @@ describe('AppBody', () => {
       gameFieldSize: 4,
       gameFieldPercentFilled: 10,
       gameFieldData: [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      selectedCells: {},
     };
     const { asFragment } = render(
       <Store.Provider value={{ dispatch, state }}>

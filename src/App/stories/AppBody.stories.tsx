@@ -16,7 +16,6 @@ const state = {
   gameFieldSize: 4,
   gameFieldPercentFilled: 10,
   gameFieldData: [0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-  selectedCells: {},
 };
 
 const dispatch = () => null;

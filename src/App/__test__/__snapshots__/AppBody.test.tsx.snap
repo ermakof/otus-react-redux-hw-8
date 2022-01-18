@@ -7,7 +7,7 @@ exports[`AppBody Render <AppBody> with data 1`] = `
     role="gamePanel"
   >
     <section
-      class="css-hsjawn"
+      class="css-1gk2x1a"
       role="cellsGrid"
     >
       <div
@@ -99,7 +99,7 @@ exports[`AppBody Render <AppBody> without data 1`] = `
     role="gamePanel"
   >
     <section
-      class="css-hsjawn"
+      class="css-1gk2x1a"
       role="cellsGrid"
     >
       <div

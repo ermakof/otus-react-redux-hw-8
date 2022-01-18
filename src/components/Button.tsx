@@ -10,10 +10,11 @@ const Root = styled.button`
 export interface IButton {
   title?: string;
   onClick?: () => void;
+  role?: string;
 }
-const Button: FC<IButton> = ({ title = 'Button', onClick }) => {
+const Button: FC<IButton> = ({ title = 'Button', onClick, role = 'button' }) => {
   return (
-    <Root role="button" onClick={onClick}>
+    <Root role={role} onClick={onClick}>
       {title}
     </Root>
   );

@@ -17,19 +17,19 @@ const reducer = (state: IState, action: IAction) => {
     }
 
     case CellActions.SET_SELECTED: {
-      const { selected = true, cellId = 0 } = action.payload || {};
-      const selectedCells = { ...state.selectedCells };
-      selectedCells[cellId] = selected;
+      const { selectedCell = undefined } = action.payload || {};
       return {
         ...state,
-        selectedCells,
+        selectedCell,
       };
     }
 
     case AppActions.RESET: {
+      const gameFieldPercentFilled = parseInt(state.gameLevel, 10) * 10;
       return {
         ...state,
-        gameFieldData: createGameField(state.gameFieldSize ** 2, state.gameFieldPercentFilled),
+        gameFieldPercentFilled,
+        gameFieldData: createGameField(state.gameFieldSize ** 2, gameFieldPercentFilled),
       };
     }
 
@@ -39,6 +39,30 @@ const reducer = (state: IState, action: IAction) => {
       return {
         ...state,
         gameLevel,
+        gameFieldPercentFilled,
+        gameFieldData: createGameField(state.gameFieldSize ** 2, gameFieldPercentFilled),
+      };
+    }
+
+    case AppActions.LOGIN: {
+      const { userProfile = null } = action.payload || {};
+      return {
+        ...state,
+        userProfile: { ...userProfile },
+      };
+    }
+
+    case AppActions.LOGOUT: {
+      return {
+        ...state,
+        userProfile: null,
+      };
+    }
+
+    case AppActions.CLEAR_GAME_FIELD: {
+      const gameFieldPercentFilled = 0;
+      return {
+        ...state,
         gameFieldPercentFilled,
         gameFieldData: createGameField(state.gameFieldSize ** 2, gameFieldPercentFilled),
       };

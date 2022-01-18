@@ -15,7 +15,6 @@ describe('GameField', () => {
       gameFieldSize: 3,
       gameFieldPercentFilled: 10,
       gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
-      selectedCells: {},
     };
   });
 

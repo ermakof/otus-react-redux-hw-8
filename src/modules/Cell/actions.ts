@@ -1,8 +1,8 @@
 import actionType from './actionType';
 
-const setSelectedCell = (cellId: number, selected: boolean) => ({
+const setSelectedCell = (selectedCell?: number) => ({
   type: actionType.SET_SELECTED,
-  payload: { cellId, selected },
+  payload: { selectedCell },
 });
 
 export { setSelectedCell };
