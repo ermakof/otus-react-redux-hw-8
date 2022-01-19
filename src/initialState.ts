@@ -12,6 +12,7 @@ const initialState: IState = {
   gameFieldData: createGameField(INIT_GAME_FIELD_SIZE ** 2, INIT_GAME_FIELD_PERCENT_FILLED),
   selectedCell: undefined,
   userProfile: undefined,
+  isLoading: false,
 };
 
 export default initialState;

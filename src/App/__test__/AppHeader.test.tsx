@@ -11,6 +11,28 @@ describe('AppHeader', () => {
     dispatch = jest.fn();
   });
 
+  it('Render authorised <AppHeader>', () => {
+    const state = {
+      gameLevel: '1',
+      gameFieldSize: 3,
+      gameFieldPercentFilled: 10,
+      gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
+      userProfile: { login: '123', password: '123', token: '7a0cbf93-aa13-4b50-8a41-97ddbfba00d5' },
+    };
+    const { asFragment } = render(
+      <Store.Provider value={{ dispatch, state }}>
+        <AppHeader />
+      </Store.Provider>
+    );
+    expect(asFragment()).toMatchSnapshot();
+    const title = screen.getByText(/Lines/gi);
+    expect(title).toBeInTheDocument();
+    const button = screen.getByRole(/^buttonLogout$/gi);
+    expect(button).toBeInTheDocument();
+    const select = screen.getByRole(/select/gi);
+    expect(select).toBeInTheDocument();
+  });
+
   it('Render unauthorised <AppHeader>', () => {
     const state = {
       gameLevel: '1',
@@ -28,27 +50,5 @@ describe('AppHeader', () => {
     expect(title).toBeInTheDocument();
     const button = screen.getByRole(/buttonLogin/gi);
     expect(button).toBeInTheDocument();
-  });
-
-  it('Render authorised <AppHeader>', () => {
-    const state = {
-      gameLevel: '1',
-      gameFieldSize: 3,
-      gameFieldPercentFilled: 10,
-      gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
-      userProfile: { login: '123', password: '123' },
-    };
-    const { asFragment } = render(
-      <Store.Provider value={{ dispatch, state }}>
-        <AppHeader />
-      </Store.Provider>
-    );
-    expect(asFragment()).toMatchSnapshot();
-    const title = screen.getByText(/Lines/gi);
-    expect(title).toBeInTheDocument();
-    const button = screen.getByRole(/^buttonLogout$/gi);
-    expect(button).toBeInTheDocument();
-    const select = screen.getByRole(/select/gi);
-    expect(select).toBeInTheDocument();
   });
 });

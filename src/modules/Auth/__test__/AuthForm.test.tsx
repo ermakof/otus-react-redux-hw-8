@@ -1,12 +1,26 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import AuthForm from '@src/modules/AuthForm';
+import AuthForm from '@src/modules/Auth/AuthForm';
 import userEvent from '@testing-library/user-event';
+import Store from '@src/store';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('AuthForm', () => {
   it('Render <AuthForm>', () => {
-    const handleSubmit = jest.fn();
-    const { asFragment } = render(<AuthForm onSubmit={handleSubmit} />);
+    const state = {
+      gameLevel: '1',
+      gameFieldSize: 3,
+      gameFieldPercentFilled: 10,
+      gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
+    };
+    const dispatch = jest.fn();
+    const { asFragment } = render(
+      <Store.Provider value={{ dispatch, state }}>
+        <Router>
+          <AuthForm />
+        </Router>
+      </Store.Provider>
+    );
     expect(asFragment()).toMatchSnapshot();
     const authForm = screen.getByRole(/authForm/gi);
     expect(authForm).toBeInTheDocument();
@@ -17,8 +31,20 @@ describe('AuthForm', () => {
   });
 
   it('Change input <AuthForm>', async () => {
-    const handleSubmit = jest.fn();
-    render(<AuthForm onSubmit={handleSubmit} />);
+    const state = {
+      gameLevel: '1',
+      gameFieldSize: 3,
+      gameFieldPercentFilled: 10,
+      gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
+    };
+    const dispatch = jest.fn();
+    render(
+      <Store.Provider value={{ dispatch, state }}>
+        <Router>
+          <AuthForm />
+        </Router>
+      </Store.Provider>
+    );
     const login = screen.getByRole(/^login$/gi);
     userEvent.clear(login);
     userEvent.type(login, 'Иван');
@@ -29,9 +55,8 @@ describe('AuthForm', () => {
     userEvent.click(screen.getByRole('buttonLogin'));
 
     await waitFor(() =>
-      expect(handleSubmit).toHaveBeenCalledWith({
-        login: 'Иван',
-        password: '123',
+      expect(dispatch).toHaveBeenCalledWith({
+        type: 'APP__WAIT_ON',
       })
     );
   });

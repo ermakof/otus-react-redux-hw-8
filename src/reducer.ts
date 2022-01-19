@@ -67,6 +67,20 @@ const reducer = (state: IState, action: IAction) => {
         gameFieldData: createGameField(state.gameFieldSize ** 2, gameFieldPercentFilled),
       };
     }
+
+    case AppActions.WAIT_ON: {
+      return {
+        ...state,
+        isLoading: true,
+      };
+    }
+
+    case AppActions.WAIT_OFF: {
+      return {
+        ...state,
+        isLoading: false,
+      };
+    }
   }
 };
 

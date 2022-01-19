@@ -10,12 +10,12 @@ const setLevel = (gameLevel: string) => ({
   payload: { gameLevel },
 });
 
-const login = (userProfile: IUserProfile) => ({
+const loginApp = (userProfile: IUserProfile) => ({
   type: actionType.LOGIN,
   payload: { userProfile },
 });
 
-const logout = () => ({
+const logoutApp = () => ({
   type: actionType.LOGOUT,
 });
 
@@ -23,4 +23,12 @@ const clearGameField = () => ({
   type: actionType.CLEAR_GAME_FIELD,
 });
 
-export { resetApp, setLevel, logout, login, clearGameField };
+const waitOn = () => ({
+  type: actionType.WAIT_ON,
+});
+
+const waitOff = () => ({
+  type: actionType.WAIT_OFF,
+});
+
+export { resetApp, setLevel, loginApp, logoutApp, clearGameField, waitOn, waitOff };

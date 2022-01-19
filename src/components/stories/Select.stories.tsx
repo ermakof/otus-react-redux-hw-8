@@ -7,7 +7,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 export default {
   component: Select,
   decorators: [withKnobs],
-  title: 'Components/Button',
+  title: 'Components/Select',
 } as ISelect;
 
 const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;

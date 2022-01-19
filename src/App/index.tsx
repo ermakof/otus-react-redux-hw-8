@@ -1,13 +1,10 @@
-import React, { FC, useContext, useEffect } from 'react';
+import React, { FC } from 'react';
 import styled from '@emotion/styled';
 import { Global, css } from '@emotion/core';
 
 import AppHeader from '@src/App/AppHeader';
 import AppBottom from '@src/App/AppBottom';
 import AppBody from '@src/App/AppBody';
-import { IAuthData } from '@src/modules/AuthForm';
-import store from '@src/store';
-import { login, resetApp } from '@src/App/actions';
 
 const Root = styled.div`
   overflow: hidden;
@@ -37,28 +34,13 @@ interface IUser {
 
 export type IUserList = Array<IUser>;
 
-const App: FC = () => {
-  const { dispatch } = useContext(store);
-
-  useEffect(() => {
-    const lsAuthData = localStorage.getItem('lines:auth-data');
-    if (lsAuthData) {
-      const authData: IAuthData = JSON.parse(lsAuthData);
-      if (authData.login && authData.password) {
-        dispatch(login(authData));
-        dispatch(resetApp());
-      }
-    }
-  }, [dispatch]);
-
-  return (
-    <Root>
-      <Global styles={appGlobal} />
-      <AppHeader />
-      <AppBody />
-      <AppBottom />
-    </Root>
-  );
-};
+const App: FC = () => (
+  <Root>
+    <Global styles={appGlobal} />
+    <AppHeader />
+    <AppBody />
+    <AppBottom />
+  </Root>
+);
 
 export default App;

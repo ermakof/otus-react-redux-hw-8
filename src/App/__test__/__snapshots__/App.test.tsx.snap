@@ -9,50 +9,54 @@ exports[`render App 1`] = `
       class="css-lgrtma"
       role="topPanel"
     >
-      <p
-        class="css-gbrjra"
-      >
-        Lines 
-      </p>
       <div
-        class="css-115ni0s"
-        role="authForm"
+        class="css-ov1ktg"
       >
-        <form
-          action="#"
+        <p
+          class="css-gbrjra"
         >
-          <label
-            for="login"
+          Lines
+        </p>
+        <div
+          class="css-115ni0s"
+          role="authForm"
+        >
+          <form
+            action="#"
           >
-            Имя
-          </label>
-          <input
-            id="login"
-            name="login"
-            placeholder="Введите логин"
-            role="login"
-            value=""
-          />
-          <label
-            for="password"
-          >
-            Пароль
-          </label>
-          <input
-            id="password"
-            name="password"
-            placeholder="Введите пароль"
-            role="password"
-            value=""
-          />
-          <button
-            disabled=""
-            role="buttonLogin"
-            type="submit"
-          >
-            Войти
-          </button>
-        </form>
+            <label
+              for="login"
+            >
+              Имя
+            </label>
+            <input
+              id="login"
+              name="login"
+              placeholder="Введите логин"
+              role="login"
+              value=""
+            />
+            <label
+              for="password"
+            >
+              Пароль
+            </label>
+            <input
+              id="password"
+              name="password"
+              placeholder="Введите пароль"
+              role="password"
+              value=""
+            />
+            <button
+              disabled=""
+              role="buttonLogin"
+              type="submit"
+            >
+              Войти
+            </button>
+          </form>
+        </div>
       </div>
     </div>
     <div

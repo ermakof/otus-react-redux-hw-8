@@ -1,6 +1,14 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import { Formik, Field, Form } from 'formik';
 import styled from '@emotion/styled';
+import { loginApp, resetApp, waitOn, waitOff } from '@src/App/actions';
+import store from '@src/store';
+import { useLocation, useNavigate } from 'react-router-dom';
+import {
+  fakeAuthProvider,
+  getUserProfileFormLocalStorage,
+} from '@src/modules/Auth/fakeAuthProvider';
+import { IUserProfile } from '@src/model';
 
 const Root = styled.div`
   label {
@@ -31,13 +39,32 @@ export type IAuthData = {
   password: string;
 };
 
-const AuthForm: FC<IUserFormProps> = ({ onSubmit }) => {
+const AuthForm: FC = () => {
+  const { dispatch } = useContext(store);
   const [authData, setAuthData] = useState<IAuthData>({ login: '', password: '' });
 
-  useEffect(() => {});
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  // @ts-ignore
+  const from = location.state?.from?.pathname || '/';
+
+  useEffect(() => {
+    const userProfile = getUserProfileFormLocalStorage();
+    if (userProfile) {
+      dispatch(loginApp(userProfile));
+      dispatch(resetApp());
+    }
+  }, [dispatch]);
 
   const handleSubmit = () => {
-    onSubmit({ ...authData });
+    dispatch(waitOn());
+    fakeAuthProvider.signIn(authData, (userProfile: IUserProfile) => {
+      dispatch(loginApp(userProfile));
+      dispatch(resetApp());
+      navigate(from, { replace: true });
+      dispatch(waitOff());
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

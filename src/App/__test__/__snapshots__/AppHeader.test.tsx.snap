@@ -6,57 +6,61 @@ exports[`AppHeader Render authorised <AppHeader> 1`] = `
     class="css-lgrtma"
     role="topPanel"
   >
-    <p
-      class="css-gbrjra"
-    >
-      Lines 123
-    </p>
     <div
-      class="css-lgrtma"
-      role="userForm"
+      class="css-ov1ktg"
     >
-      <button
-        class="css-tv5zn1"
-        role="button"
+      <p
+        class="css-gbrjra"
       >
-        Reset
-      </button>
-      <select
-        class="css-tv5zn1"
-        name="select"
-        role="select"
+        Lines 123
+      </p>
+      <div
+        class="css-lgrtma"
+        role="userForm"
       >
-        <option
-          role="option"
-          value="1"
+        <button
+          class="css-tv5zn1"
+          role="buttonReset"
         >
-          Падаван
-        </option>
-        <option
-          role="option"
-          value="2"
+          Reset
+        </button>
+        <select
+          class="css-tv5zn1"
+          name="select"
+          role="select"
         >
-          Джедай
-        </option>
-        <option
-          role="option"
-          value="3"
+          <option
+            role="option"
+            value="1"
+          >
+            Падаван
+          </option>
+          <option
+            role="option"
+            value="2"
+          >
+            Джедай
+          </option>
+          <option
+            role="option"
+            value="3"
+          >
+            Мастер-джедай
+          </option>
+          <option
+            role="option"
+            value="4"
+          >
+            Член Совета Силы
+          </option>
+        </select>
+        <button
+          class="css-tv5zn1"
+          role="buttonLogout"
         >
-          Мастер-джедай
-        </option>
-        <option
-          role="option"
-          value="4"
-        >
-          Член Совета Силы
-        </option>
-      </select>
-      <button
-        class="css-tv5zn1"
-        role="buttonLogout"
-      >
-        Выйти
-      </button>
+          Выйти
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -68,50 +72,54 @@ exports[`AppHeader Render unauthorised <AppHeader> 1`] = `
     class="css-lgrtma"
     role="topPanel"
   >
-    <p
-      class="css-gbrjra"
-    >
-      Lines 
-    </p>
     <div
-      class="css-115ni0s"
-      role="authForm"
+      class="css-ov1ktg"
     >
-      <form
-        action="#"
+      <p
+        class="css-gbrjra"
       >
-        <label
-          for="login"
+        Lines
+      </p>
+      <div
+        class="css-115ni0s"
+        role="authForm"
+      >
+        <form
+          action="#"
         >
-          Имя
-        </label>
-        <input
-          id="login"
-          name="login"
-          placeholder="Введите логин"
-          role="login"
-          value=""
-        />
-        <label
-          for="password"
-        >
-          Пароль
-        </label>
-        <input
-          id="password"
-          name="password"
-          placeholder="Введите пароль"
-          role="password"
-          value=""
-        />
-        <button
-          disabled=""
-          role="buttonLogin"
-          type="submit"
-        >
-          Войти
-        </button>
-      </form>
+          <label
+            for="login"
+          >
+            Имя
+          </label>
+          <input
+            id="login"
+            name="login"
+            placeholder="Введите логин"
+            role="login"
+            value=""
+          />
+          <label
+            for="password"
+          >
+            Пароль
+          </label>
+          <input
+            id="password"
+            name="password"
+            placeholder="Введите пароль"
+            role="password"
+            value=""
+          />
+          <button
+            disabled=""
+            role="buttonLogin"
+            type="submit"
+          >
+            Войти
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </DocumentFragment>

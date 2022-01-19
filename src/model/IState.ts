@@ -8,4 +8,5 @@ export interface IState {
   gameLevel: string;
   selectedCell?: number;
   userProfile?: IUserProfile;
+  isLoading?: boolean;
 }
