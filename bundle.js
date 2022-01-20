@@ -4511,11 +4511,47 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 const Root = _emotion_styled__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  overflow: hidden;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',\n    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n"])));
 const appGlobal = (0,_emotion_core__WEBPACK_IMPORTED_MODULE_2__.css)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  body {\n    background: #282c34;\n    color: white;\n    margin: 0;\n    padding: 0;\n    min-height: '100vh';\n    max-width: '100vw';\n  }\n"])));
 
-const App = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_emotion_core__WEBPACK_IMPORTED_MODULE_2__.Global, {
+const App = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, {
+  role: "rootApp"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_emotion_core__WEBPACK_IMPORTED_MODULE_2__.Global, {
   styles: appGlobal
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AppHeader__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AppBody__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AppBottom__WEBPACK_IMPORTED_MODULE_4__["default"], null));
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./src/Root.tsx":
+/*!**********************!*\
+  !*** ./src/Root.tsx ***!
+  \**********************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reducer */ "./src/reducer.ts");
+/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./initialState */ "./src/initialState.ts");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ "./src/store.tsx");
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./App */ "./src/App/index.tsx");
+
+
+
+
+
+
+const Root = () => {
+  // @ts-ignore
+  const [state, dispatch] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], _initialState__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_store__WEBPACK_IMPORTED_MODULE_3__["default"].Provider, {
+    value: {
+      dispatch,
+      state
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_App__WEBPACK_IMPORTED_MODULE_4__["default"], null)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Root);
 
 /***/ }),
 
@@ -4561,9 +4597,6 @@ const Button = _ref => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Loading": function() { return /* binding */ Loading; }
-/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/emotion-styled.browser.esm.js");
@@ -4575,20 +4608,24 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+ // const loading = document.getElementById('loading');
 
-const loading = document.getElementById('loading');
 const Fullscreen = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));
 const rotate = (0,_emotion_react__WEBPACK_IMPORTED_MODULE_3__.keyframes)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  from {\n    transform: rotate(0deg);\n  }\n\n  to {\n    transform: rotate(360deg);\n  }\n"])));
-const Root = (0,_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(Fullscreen)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  background: rgba(0, 0, 0, 0.3);\n\n  article {\n    display: inline-block;\n    width: 64px;\n    height: 64px;\n\n    div {\n      box-sizing: border-box;\n      display: block;\n      position: absolute;\n      width: 51px;\n      height: 51px;\n      margin: 6px;\n      border: 4px solid #0055a6;\n      border-radius: 50%;\n      animation: ", " 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\n      border-color: #0055a6 transparent transparent transparent;\n    }\n\n    div:nth-child(1) {\n      animation-delay: -0.45s;\n    }\n\n    div:nth-child(2) {\n      animation-delay: -0.3s;\n    }\n\n    div:nth-child(3) {\n      animation-delay: -0.15s;\n    }\n  }\n"])), rotate);
-class Loading extends react__WEBPACK_IMPORTED_MODULE_0__.PureComponent {
-  render() {
-    return loading && /*#__PURE__*/(0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, {
-      role: "loading"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("article", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null))), loading);
-  }
+const Root = (0,_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(Fullscreen)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  background: rgba(0, 0, 0, 0.3);\n\n  article {\n    display: inline-block;\n    width: 64px;\n    height: 64px;\n\n    div {\n      box-sizing: border-box;\n      display: block;\n      position: absolute;\n      width: 51px;\n      height: 51px;\n      margin: 6px;\n      border: 4px solid #0055a6;\n      border-radius: 50%;\n      animation: ", " 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\n      border-color: #0055a6 transparent transparent transparent;\n    }\n  }\n"])), rotate);
 
-}
-/* harmony default export */ __webpack_exports__["default"] = (Loading);
+const Loading = () => {
+  const [loading, setLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const loading = document.getElementById('loading');
+    setLoading(loading);
+  }, []);
+  return loading && /*#__PURE__*/(0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, {
+    role: "loading"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("article", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null))), loading);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(Loading));
 
 /***/ }),
 
@@ -4696,8 +4733,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/emotion-styled.browser.esm.js");
 /* harmony import */ var _App_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../App/actions */ "./src/App/actions.ts");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../store */ "./src/store.tsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _fakeAuthProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./fakeAuthProvider */ "./src/modules/Auth/fakeAuthProvider.ts");
+/* harmony import */ var _useLogin__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./useLogin */ "./src/modules/Auth/useLogin.ts");
 var _templateObject;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -4718,36 +4755,26 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 const Root = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  label {\n    margin-right: 5px;\n  }\n\n  button {\n    margin: 5px;\n  }\n\n  input {\n    margin-right: 30px;\n    width: 100px;\n  }\n\n  form {\n    font-size: 14px;\n    margin: 3vh 0;\n  }\n"])));
 
 const AuthForm = () => {
-  var _location$state, _location$state$from;
-
   const {
     dispatch
   } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_store__WEBPACK_IMPORTED_MODULE_4__["default"]);
+  const login = (0,_useLogin__WEBPACK_IMPORTED_MODULE_6__["default"])();
   const [authData, setAuthData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
     login: '',
     password: ''
   });
-  let navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
-  let location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useLocation)(); // @ts-ignore
-
-  const from = ((_location$state = location.state) === null || _location$state === void 0 ? void 0 : (_location$state$from = _location$state.from) === null || _location$state$from === void 0 ? void 0 : _location$state$from.pathname) || '/';
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     const userProfile = (0,_fakeAuthProvider__WEBPACK_IMPORTED_MODULE_5__.getUserProfileFormLocalStorage)();
 
     if (userProfile) {
-      dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_3__.loginApp)(userProfile));
-      dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_3__.resetApp)());
+      login(userProfile);
     }
-  }, [dispatch]);
+  }, []);
 
   const handleSubmit = () => {
     dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_3__.waitOn)());
     _fakeAuthProvider__WEBPACK_IMPORTED_MODULE_5__.fakeAuthProvider.signIn(authData, userProfile => {
-      dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_3__.loginApp)(userProfile));
-      dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_3__.resetApp)());
-      navigate(from, {
-        replace: true
-      });
+      login(userProfile);
       dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_3__.waitOff)());
     });
   };
@@ -4949,7 +4976,7 @@ const fakeAuthProvider = {
 
       localStorage.setItem('lines:userProfile', JSON.stringify(userProfile));
       callback(userProfile);
-    }, 1000); // fake async
+    }, 500); // fake async
   },
 
   signOut(callback) {
@@ -4975,6 +5002,46 @@ const getUserProfileFormLocalStorage = () => {
 };
 
 
+
+/***/ }),
+
+/***/ "./src/modules/Auth/useLogin.ts":
+/*!**************************************!*\
+  !*** ./src/modules/Auth/useLogin.ts ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../store */ "./src/store.tsx");
+/* harmony import */ var _App_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../App/actions */ "./src/App/actions.ts");
+
+
+
+
+
+const useLogin = () => {
+  const {
+    dispatch
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_store__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  let navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
+  let location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useLocation)();
+  return userProfile => {
+    var _location$state, _location$state$from;
+
+    // @ts-ignore
+    const from = ((_location$state = location.state) === null || _location$state === void 0 ? void 0 : (_location$state$from = _location$state.from) === null || _location$state$from === void 0 ? void 0 : _location$state$from.pathname) || '/';
+    dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_2__.loginApp)(userProfile));
+    dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_2__.resetApp)());
+    navigate(from, {
+      replace: true
+    });
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (useLogin);
 
 /***/ }),
 
@@ -5198,7 +5265,7 @@ const GameField = () => {
 
   if (!gameFieldSize) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-      role: "dataMessage"
+      role: "noDataMessage"
     }, "\u041D\u0435\u0442 \u0434\u0430\u043D\u043D\u044B\u0445!");
   }
 
@@ -54080,29 +54147,11 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./src/App/index.tsx");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ "./src/store.tsx");
-/* harmony import */ var _reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reducer */ "./src/reducer.ts");
-/* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./initialState */ "./src/initialState.ts");
+/* harmony import */ var _Root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Root */ "./src/Root.tsx");
 
 
 
-
-
-
-
-const Root = () => {
-  // @ts-ignore
-  const [state, dispatch] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_reducer__WEBPACK_IMPORTED_MODULE_4__["default"], _initialState__WEBPACK_IMPORTED_MODULE_5__["default"]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_store__WEBPACK_IMPORTED_MODULE_3__["default"].Provider, {
-    value: {
-      dispatch,
-      state
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_App__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
-};
-
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, null), document.getElementById('root'));
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Root__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('root'));
 }();
 /******/ })()
 ;
