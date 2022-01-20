@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.11% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/18</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">61.9% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/21</span>
+                <span class='fraction'>13/21</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.11% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/18</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -157,8 +157,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -197,23 +197,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -221,14 +221,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -283,39 +283,39 @@ const reducer = (state: IState, action: IAction) =&gt; {
       };
     }
 &nbsp;
-<span class="branch-4 cbranch-no" title="branch not covered" >    case AppActions.LOGIN: {</span>
-      const { userProfile = <span class="branch-0 cbranch-no" title="branch not covered" >null </span>} = <span class="cstat-no" title="statement not covered" >action.payload || {};</span>
-<span class="cstat-no" title="statement not covered" >      return {</span>
+    case AppActions.LOGIN: {
+      const { userProfile = <span class="branch-0 cbranch-no" title="branch not covered" >null </span>} = action.payload || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+      return {
         ...state,
         userProfile: { ...userProfile },
       };
     }
 &nbsp;
-<span class="branch-5 cbranch-no" title="branch not covered" >    case AppActions.LOGOUT: {</span>
-<span class="cstat-no" title="statement not covered" >      return {</span>
+    case AppActions.LOGOUT: {
+      return {
         ...state,
         userProfile: null,
       };
     }
 &nbsp;
-<span class="branch-6 cbranch-no" title="branch not covered" >    case AppActions.CLEAR_GAME_FIELD: {</span>
-      const gameFieldPercentFilled = <span class="cstat-no" title="statement not covered" >0;</span>
-<span class="cstat-no" title="statement not covered" >      return {</span>
+    case AppActions.CLEAR_GAME_FIELD: {
+      const gameFieldPercentFilled = 0;
+      return {
         ...state,
         gameFieldPercentFilled,
         gameFieldData: createGameField(state.gameFieldSize ** 2, gameFieldPercentFilled),
       };
     }
 &nbsp;
-<span class="branch-7 cbranch-no" title="branch not covered" >    case AppActions.WAIT_ON: {</span>
-<span class="cstat-no" title="statement not covered" >      return {</span>
+    case AppActions.WAIT_ON: {
+      return {
         ...state,
         isLoading: true,
       };
     }
 &nbsp;
-<span class="branch-8 cbranch-no" title="branch not covered" >    case AppActions.WAIT_OFF: {</span>
-<span class="cstat-no" title="statement not covered" >      return {</span>
+    case AppActions.WAIT_OFF: {
+      return {
         ...state,
         isLoading: false,
       };
@@ -331,7 +331,7 @@ export default reducer;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Jan 19 2022 22:30:23 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 20 2022 10:31:32 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../prettify.js"></script>
         <script>
