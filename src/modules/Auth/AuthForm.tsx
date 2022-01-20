@@ -50,7 +50,7 @@ const AuthForm: FC = () => {
     if (userProfile) {
       login(userProfile);
     }
-  }, [login]);
+  }, []);
 
   const handleSubmit = () => {
     dispatch(waitOn());
