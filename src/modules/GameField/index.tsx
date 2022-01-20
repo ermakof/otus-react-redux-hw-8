@@ -27,7 +27,7 @@ const GameField: FC = () => {
   const heightMinus1 = Math.floor(gameFieldData.length / gameFieldSize) - 1;
 
   if (!gameFieldSize) {
-    return <p role="dataMessage">Нет данных!</p>;
+    return <p role="noDataMessage">Нет данных!</p>;
   }
 
   return (

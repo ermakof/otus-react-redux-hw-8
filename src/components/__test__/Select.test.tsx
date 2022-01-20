@@ -13,7 +13,7 @@ describe('Select', () => {
     expect(select).toBeInTheDocument();
   });
 
-  it('select on <Select>', () => {
+  it('change on <Select>', () => {
     const handleSelect = jest.fn();
     render(<Select onSelect={handleSelect} />);
     const select = screen.getByRole(/select/gi);

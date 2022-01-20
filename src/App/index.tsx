@@ -35,7 +35,7 @@ interface IUser {
 export type IUserList = Array<IUser>;
 
 const App: FC = () => (
-  <Root>
+  <Root role="rootApp">
     <Global styles={appGlobal} />
     <AppHeader />
     <AppBody />

@@ -18,6 +18,18 @@ describe('GameField', () => {
     };
   });
 
+  it('No render cells with gameFieldSize = 0', () => {
+    state.gameFieldSize = 0;
+    const { asFragment } = render(
+      <Store.Provider value={{ dispatch, state }}>
+        <GameField />
+      </Store.Provider>
+    );
+    expect(asFragment()).toMatchSnapshot();
+    const message = screen.getByRole(/^noDataMessage$/gi);
+    expect(message).toBeInTheDocument();
+  });
+
   it('renders 9 cells from data:[9 items]', () => {
     const { asFragment } = render(
       <Store.Provider value={{ dispatch, state }}>

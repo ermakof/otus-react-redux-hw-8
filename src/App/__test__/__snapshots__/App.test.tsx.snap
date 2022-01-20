@@ -4,6 +4,7 @@ exports[`render App 1`] = `
 <DocumentFragment>
   <div
     class="css-5simcc"
+    role="rootApp"
   >
     <div
       class="css-lgrtma"

@@ -19,7 +19,7 @@ const fakeAuthProvider = {
       let userProfile: IUserProfile = { ...authData, token: uuidv4() };
       localStorage.setItem('lines:userProfile', JSON.stringify(userProfile));
       callback(userProfile);
-    }, 1000); // fake async
+    }, 500); // fake async
   },
   signOut(callback: VoidFunction) {
     fakeAuthProvider.isAuthenticated = false;

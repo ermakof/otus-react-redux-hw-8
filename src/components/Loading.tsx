@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 
-const loading = document.getElementById('loading');
+// const loading = document.getElementById('loading');
 
 const Fullscreen = styled.div`
   position: absolute;
@@ -47,38 +47,30 @@ const Root = styled(Fullscreen)`
       animation: ${rotate} 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
       border-color: #0055a6 transparent transparent transparent;
     }
-
-    div:nth-child(1) {
-      animation-delay: -0.45s;
-    }
-
-    div:nth-child(2) {
-      animation-delay: -0.3s;
-    }
-
-    div:nth-child(3) {
-      animation-delay: -0.15s;
-    }
   }
 `;
 
-export class Loading extends PureComponent {
-  render() {
-    return (
-      loading &&
-      createPortal(
-        <Root role="loading">
-          <article>
-            <div />
-            <div />
-            <div />
-            <div />
-          </article>
-        </Root>,
-        loading
-      )
-    );
-  }
-}
+const Loading = () => {
+  const [loading, setLoading] = useState<HTMLElement | null>(null);
+  useEffect(() => {
+    const loading = document.getElementById('loading');
+    setLoading(loading);
+  }, []);
 
-export default Loading;
+  return (
+    loading &&
+    createPortal(
+      <Root role="loading">
+        <article>
+          <div />
+          <div />
+          <div />
+          <div />
+        </article>
+      </Root>,
+      loading
+    )
+  );
+};
+
+export default memo(Loading);

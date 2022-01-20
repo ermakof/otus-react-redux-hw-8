@@ -32,7 +32,31 @@ describe('UserForm', () => {
     expect(buttonLogout).toBeInTheDocument();
   });
 
-  it('Change input <UserForm>', async () => {
+  it('Reset game <UserForm>', async () => {
+    const state = {
+      gameLevel: '1',
+      gameFieldSize: 3,
+      gameFieldPercentFilled: 10,
+      gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
+    };
+    const dispatch = jest.fn();
+    render(
+      <Store.Provider value={{ dispatch, state }}>
+        <Router>
+          <UserForm />
+        </Router>
+      </Store.Provider>
+    );
+    userEvent.click(screen.getByRole('buttonReset'));
+
+    await waitFor(() =>
+      expect(dispatch).toHaveBeenCalledWith({
+        type: 'APP__RESET',
+      })
+    );
+  });
+
+  it('Logout app <UserForm>', async () => {
     const state = {
       gameLevel: '1',
       gameFieldSize: 3,
@@ -51,7 +75,35 @@ describe('UserForm', () => {
 
     await waitFor(() =>
       expect(dispatch).toHaveBeenCalledWith({
-        type: 'APP__WAIT_ON',
+        type: 'APP__LOGOUT',
+      })
+    );
+  });
+
+  it('Select level <UserForm>', async () => {
+    const state = {
+      gameLevel: '1',
+      gameFieldSize: 3,
+      gameFieldPercentFilled: 10,
+      gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
+    };
+    const dispatch = jest.fn();
+    render(
+      <Store.Provider value={{ dispatch, state }}>
+        <Router>
+          <UserForm />
+        </Router>
+      </Store.Provider>
+    );
+    const select = screen.getByRole(/select/gi);
+    userEvent.selectOptions(select, '2');
+    const option = screen.getByRole('option', { name: 'Джедай' }) as HTMLOptionElement;
+    expect(option.selected).toBe(true);
+
+    await waitFor(() =>
+      expect(dispatch).toHaveBeenCalledWith({
+        payload: { gameLevel: '2' },
+        type: 'APP__SET_LEVEL',
       })
     );
   });
