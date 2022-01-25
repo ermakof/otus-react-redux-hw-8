@@ -10,7 +10,6 @@ test('render App', () => {
     gameFieldSize: 3,
     gameFieldPercentFilled: 10,
     gameFieldData: [1, 0, 0, 0, 0, 0, 0, 0, 0],
-    selectedCells: {},
   };
   const dispatch = jest.fn();
   const { asFragment } = render(

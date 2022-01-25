@@ -5,7 +5,10 @@ import { ICellInfo } from '@src/modules/Cell/models';
 import Cell from '@src/modules/Cell';
 import store from '@src/store';
 
-export const FieldContainer = styled.section`
+interface IFieldContainer {
+  active?: boolean;
+}
+export const FieldContainer = styled.section<IFieldContainer>`
   position: absolute;
   left: 0;
   right: 0;
@@ -14,20 +17,21 @@ export const FieldContainer = styled.section`
   margin: auto;
   height: fit-content;
   width: fit-content;
+  opacity: ${({ active }) => (active ? 1 : 0.3)};
 `;
 
 const GameField: FC = () => {
   const { state } = useContext(store);
-  const { gameFieldData, gameFieldSize, selectedCells = {} } = state;
+  const { gameFieldData, gameFieldSize, selectedCell, userProfile } = state;
   const widthMinus1 = gameFieldSize - 1;
   const heightMinus1 = Math.floor(gameFieldData.length / gameFieldSize) - 1;
 
   if (!gameFieldSize) {
-    return <p role="dataMessage">Нет данных!</p>;
+    return <p role="noDataMessage">Нет данных!</p>;
   }
 
   return (
-    <FieldContainer role="cellsGrid">
+    <FieldContainer role="cellsGrid" active={!!userProfile}>
       {gameFieldData.map((item: ICellInfo, index: number) => {
         const y = Math.floor(index / gameFieldSize);
         const x = index % gameFieldSize;
@@ -39,7 +43,7 @@ const GameField: FC = () => {
             key={`${y}-${x}`}
             num={index}
             isFilled={item}
-            isSelected={selectedCells[index]}
+            isSelected={selectedCell === index}
             isLeft={isLeft}
             isRight={isRight}
             isBottom={isBottom}

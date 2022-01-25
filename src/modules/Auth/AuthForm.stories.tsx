@@ -1,15 +1,12 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
+import { BrowserRouter as Router } from 'react-router-dom';
 
+import AuthForm from '@src/modules/Auth/AuthForm';
 import Store from '@src/store';
-import AppBody from '@src/App/AppBody';
 
-export default {
-  component: AppBody,
-  decorators: [withKnobs],
-  title: 'Application/AppBody',
-} as ComponentMeta<typeof AppBody>;
+const dispatch = () => null;
 
 const state = {
   gameLevel: '1',
@@ -18,11 +15,17 @@ const state = {
   gameFieldData: [0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
 };
 
-const dispatch = () => null;
+export default {
+  component: AuthForm,
+  decorators: [withKnobs],
+  title: 'Forms/AuthForm',
+} as ComponentMeta<typeof AuthForm>;
 
-const Template: ComponentStory<typeof AppBody> = (args) => (
+const Template: ComponentStory<typeof AuthForm> = (args) => (
   <Store.Provider value={{ dispatch, state }}>
-    <AppBody {...args} />
+    <Router>
+      <AuthForm {...args} />
+    </Router>
   </Store.Provider>
 );
 

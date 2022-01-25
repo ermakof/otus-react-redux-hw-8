@@ -70,7 +70,7 @@ const Cell: React.FC<CellProps> = ({
   const { dispatch } = useContext(store);
 
   const handleClick = () => {
-    dispatch(setSelectedCell(num, !isSelected));
+    dispatch(setSelectedCell(!isSelected ? num : undefined));
   };
   const frameColor = '#ddd';
 

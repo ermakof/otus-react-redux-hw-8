@@ -34,15 +34,13 @@ interface IUser {
 
 export type IUserList = Array<IUser>;
 
-const App: FC = () => {
-  return (
-    <Root>
-      <Global styles={appGlobal} />
-      <AppHeader />
-      <AppBody />
-      <AppBottom />
-    </Root>
-  );
-};
+const App: FC = () => (
+  <Root role="rootApp">
+    <Global styles={appGlobal} />
+    <AppHeader />
+    <AppBody />
+    <AppBottom />
+  </Root>
+);
 
 export default App;
