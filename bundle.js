@@ -4541,8 +4541,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Root = () => {
-  // @ts-ignore
-  const [state, dispatch] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], _initialState__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  const [state, dispatch] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_reducer__WEBPACK_IMPORTED_MODULE_1__.reducer, _initialState__WEBPACK_IMPORTED_MODULE_2__.initialState);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_store__WEBPACK_IMPORTED_MODULE_3__["default"].Provider, {
     value: {
       dispatch,
@@ -4683,6 +4682,9 @@ const Select = _ref => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "initialState": function() { return /* binding */ initialState; }
+/* harmony export */ });
 /* harmony import */ var _utils_createGameField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/createGameField */ "./src/utils/createGameField.ts");
 
 const INIT_GAME_LEVEL = '1';
@@ -4697,7 +4699,6 @@ const initialState = {
   userProfile: undefined,
   isLoading: false
 };
-/* harmony default export */ __webpack_exports__["default"] = (initialState);
 
 /***/ }),
 
@@ -4956,8 +4957,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function uuidv4() {
-  // @ts-ignore
-  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
+  return "".concat(1e7, -1e3).concat(-4e3).concat(-8e3).concat(-1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
 }
 /**
  * This represents some generic auth provider API.
@@ -5027,15 +5027,10 @@ const useLogin = () => {
     dispatch
   } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_store__WEBPACK_IMPORTED_MODULE_1__["default"]);
   let navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
-  let location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useLocation)();
   return userProfile => {
-    var _location$state, _location$state$from;
-
-    // @ts-ignore
-    const from = ((_location$state = location.state) === null || _location$state === void 0 ? void 0 : (_location$state$from = _location$state.from) === null || _location$state$from === void 0 ? void 0 : _location$state$from.pathname) || '/';
     dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_2__.loginApp)(userProfile));
     dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_2__.resetApp)());
-    navigate(from, {
+    navigate('/', {
       replace: true
     });
   };
@@ -5324,15 +5319,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const UserForm = () => {
-  var _location$state, _location$state$from;
-
   const {
     dispatch
   } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_store__WEBPACK_IMPORTED_MODULE_3__["default"]);
   let navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useNavigate)();
-  let location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useLocation)(); // @ts-ignore
-
-  const from = ((_location$state = location.state) === null || _location$state === void 0 ? void 0 : (_location$state$from = _location$state.from) === null || _location$state$from === void 0 ? void 0 : _location$state$from.pathname) || '/';
 
   const handleReset = () => {
     dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_4__.resetApp)());
@@ -5350,7 +5340,7 @@ const UserForm = () => {
     _Auth_fakeAuthProvider__WEBPACK_IMPORTED_MODULE_6__.fakeAuthProvider.signOut(() => {
       dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_4__.logoutApp)());
       dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_4__.clearGameField)());
-      navigate(from, {
+      navigate('/', {
         replace: true
       });
       dispatch((0,_App_actions__WEBPACK_IMPORTED_MODULE_4__.waitOff)());
@@ -5384,6 +5374,9 @@ const UserForm = () => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "reducer": function() { return /* binding */ reducer; }
+/* harmony export */ });
 /* harmony import */ var _modules_GameField_actionType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/GameField/actionType */ "./src/modules/GameField/actionType.ts");
 /* harmony import */ var _modules_Cell_actionType__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Cell/actionType */ "./src/modules/Cell/actionType.ts");
 /* harmony import */ var _App_actionType__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App/actionType */ "./src/App/actionType.ts");
@@ -5400,13 +5393,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
 const reducer = (state, action) => {
   switch (action.type) {
     case _modules_GameField_actionType__WEBPACK_IMPORTED_MODULE_0__["default"].SET_SIZE:
       {
         const {
-          gameFieldSize = _initialState__WEBPACK_IMPORTED_MODULE_3__["default"].gameFieldSize
+          gameFieldSize = _initialState__WEBPACK_IMPORTED_MODULE_3__.initialState.gameFieldSize
         } = action.payload || {};
         return _objectSpread(_objectSpread({}, state), {}, {
           gameFieldSize: gameFieldSize,
@@ -5436,7 +5428,7 @@ const reducer = (state, action) => {
     case _App_actionType__WEBPACK_IMPORTED_MODULE_2__["default"].SET_LEVEL:
       {
         const {
-          gameLevel = _initialState__WEBPACK_IMPORTED_MODULE_3__["default"].gameLevel
+          gameLevel = _initialState__WEBPACK_IMPORTED_MODULE_3__.initialState.gameLevel
         } = action.payload || {};
         const gameFieldPercentFilled = parseInt(gameLevel, 10) * 10;
         return _objectSpread(_objectSpread({}, state), {}, {
@@ -5449,17 +5441,17 @@ const reducer = (state, action) => {
     case _App_actionType__WEBPACK_IMPORTED_MODULE_2__["default"].LOGIN:
       {
         const {
-          userProfile = null
+          userProfile = undefined
         } = action.payload || {};
         return _objectSpread(_objectSpread({}, state), {}, {
-          userProfile: _objectSpread({}, userProfile)
+          userProfile
         });
       }
 
     case _App_actionType__WEBPACK_IMPORTED_MODULE_2__["default"].LOGOUT:
       {
         return _objectSpread(_objectSpread({}, state), {}, {
-          userProfile: null
+          userProfile: undefined
         });
       }
 
@@ -5485,10 +5477,13 @@ const reducer = (state, action) => {
           isLoading: false
         });
       }
+
+    default:
+      {
+        return state;
+      }
   }
 };
-
-/* harmony default export */ __webpack_exports__["default"] = (reducer);
 
 /***/ }),
 
@@ -5505,7 +5500,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)({
-  state: _initialState__WEBPACK_IMPORTED_MODULE_1__["default"],
+  state: _initialState__WEBPACK_IMPORTED_MODULE_1__.initialState,
   dispatch: () => {}
 }));
 
