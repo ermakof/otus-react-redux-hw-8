@@ -2,10 +2,10 @@ import { IAction, IState } from '@src/model';
 import GameFieldActions from '@src/modules/GameField/actionType';
 import CellActions from '@src/modules/Cell/actionType';
 import AppActions from '@src/App/actionType';
-import initialState from '@src/initialState';
+import { initialState } from '@src/initialState';
 import createGameField from '@src/utils/createGameField';
 
-const reducer = (state: IState, action: IAction) => {
+export const reducer = (state: IState, action: IAction) => {
   switch (action.type) {
     case GameFieldActions.SET_SIZE: {
       const { gameFieldSize = initialState.gameFieldSize } = action.payload || {};
@@ -45,17 +45,17 @@ const reducer = (state: IState, action: IAction) => {
     }
 
     case AppActions.LOGIN: {
-      const { userProfile = null } = action.payload || {};
+      const { userProfile = undefined } = action.payload || {};
       return {
         ...state,
-        userProfile: { ...userProfile },
+        userProfile,
       };
     }
 
     case AppActions.LOGOUT: {
       return {
         ...state,
-        userProfile: null,
+        userProfile: undefined,
       };
     }
 
@@ -81,7 +81,9 @@ const reducer = (state: IState, action: IAction) => {
         isLoading: false,
       };
     }
+
+    default: {
+      return state;
+    }
   }
 };
-
-export default reducer;

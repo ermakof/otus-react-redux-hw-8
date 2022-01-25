@@ -9,7 +9,7 @@ import {
 } from '@src/App/actions';
 import { setSelectedCell } from '@src/modules/Cell/actions';
 import { setGameFieldSize } from '@src/modules/GameField/actions';
-import reducer from '@src/reducer';
+import { reducer } from '@src/reducer';
 
 describe('reducer', () => {
   it('resetApp', () => {
@@ -103,7 +103,7 @@ describe('reducer', () => {
       },
     };
     const newState = reducer(state, logoutApp());
-    expect(newState.userProfile).toEqual(null);
+    expect(newState.userProfile).toEqual(undefined);
   });
 
   it('clearGameField', () => {

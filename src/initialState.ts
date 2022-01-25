@@ -5,7 +5,7 @@ const INIT_GAME_LEVEL = '1';
 const INIT_GAME_FIELD_SIZE = 9;
 const INIT_GAME_FIELD_PERCENT_FILLED = 0;
 
-const initialState: IState = {
+export const initialState: IState = {
   gameLevel: INIT_GAME_LEVEL,
   gameFieldSize: INIT_GAME_FIELD_SIZE,
   gameFieldPercentFilled: INIT_GAME_FIELD_PERCENT_FILLED,
@@ -14,5 +14,3 @@ const initialState: IState = {
   userProfile: undefined,
   isLoading: false,
 };
-
-export default initialState;

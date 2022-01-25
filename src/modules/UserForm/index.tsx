@@ -4,17 +4,13 @@ import Button from '@src/components/Button';
 import store from '@src/store';
 import { clearGameField, logoutApp, resetApp, setLevel, waitOff, waitOn } from '@src/App/actions';
 import Select from '@src/components/Select';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { fakeAuthProvider } from '@src/modules/Auth/fakeAuthProvider';
 
 const UserForm: FC = () => {
   const { dispatch } = useContext(store);
 
   let navigate = useNavigate();
-  let location = useLocation();
-
-  // @ts-ignore
-  const from = location.state?.from?.pathname || '/';
 
   const handleReset = () => {
     dispatch(resetApp());
@@ -30,7 +26,7 @@ const UserForm: FC = () => {
     fakeAuthProvider.signOut(() => {
       dispatch(logoutApp());
       dispatch(clearGameField());
-      navigate(from, { replace: true });
+      navigate('/', { replace: true });
       dispatch(waitOff());
     });
   };
